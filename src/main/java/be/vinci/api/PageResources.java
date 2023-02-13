@@ -20,7 +20,7 @@ public class PageResources {
     private PageDataService myPageDataService = new PageDataService();
     @AnonymousOrAuthorize
     @GET
-    @Produces
+    @Produces(MediaType.APPLICATION_JSON)
     public List<Page> getAll(@Context ContainerRequestContext request) {
         User authenticatedUser = (User) request.getProperty("user");
         if (authenticatedUser == null)
@@ -28,6 +28,7 @@ public class PageResources {
         return myPageDataService.getAll(authenticatedUser);
     }
 
+    @AnonymousOrAuthorize
     @GET
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -48,14 +49,14 @@ public class PageResources {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
+    @Authorize
     public Page createOne(Page page, @Context ContainerRequestContext request) {
         if (page == null || page.getTitre() == null || page.getTitre().isBlank()
                 || page.getContenu() == null || page.getContenu().isBlank()
-                || page.getStatutPublication() == null
+                || page.getStatut() == null || page.getStatut().isBlank()
                 || page.getURI() == null || page.getURI().isBlank()) {
             throw new WebApplicationException("Lacks of mandatory info", Response.Status.BAD_REQUEST);
         }
-
         User authenticatedUser = (User) request.getProperty("user");
         return myPageDataService.createOne(page, authenticatedUser);
     }
@@ -92,16 +93,15 @@ public class PageResources {
     public Page updateOne(Page page, @PathParam("id") int id, @Context ContainerRequestContext request) {
         if (id == 0 || page == null || page.getTitre() == null || page.getTitre().isBlank()
                 || page.getContenu() == null || page.getContenu().isBlank()
-                || page.getStatutPublication() == null
+                || page.getStatut() == null
                 || page.getURI() == null || page.getURI().isBlank())
             throw new WebApplicationException(
                     Response.status(Response.Status.BAD_REQUEST).entity("Lacks of mandatory info")
                             .type("text/plain").build());
-        Page getPage = getOne(id);
         User authenticatedPage = (User) request.getProperty("user");
         Page pageToUpdate = null;
         try {
-            pageToUpdate = myPageDataService.updateOne(page, id);
+            pageToUpdate = myPageDataService.updateOne(page, id, authenticatedPage);
         } catch (Exception e) {
             throw new WebApplicationException("You are not the author", Response.Status.FORBIDDEN);
         }

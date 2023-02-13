@@ -4,26 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae74c094-30b3-4e81-974f-e3318c2b53ae" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/be/vinci/MyResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/be/vinci/api/PageResources.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/be/vinci/api/filters/AnonymousOrAuthorize.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/be/vinci/api/filters/AuthorizationRequestFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/be/vinci/api/filters/Authorize.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/be/vinci/domain/Page.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/be/vinci/domain/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/be/vinci/main/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/be/vinci/services/Json.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/be/vinci/services/PageDataService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/be/vinci/services/utils/Config.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/be/vinci/MyResourceTest.java" afterDir="false" />
+    <list default="true" id="ae74c094-30b3-4e81-974f-e3318c2b53ae" name="Changes" comment="error unauthorized">
+      <change afterPath="$PROJECT_DIR$/dev.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/request/auths.http" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/request/pages.http" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/be/vinci/api/AuthsResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/be/vinci/api/filters/AnonymousOrAuthorizationRequestFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/be/vinci/services/UserDataService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/vinci/api/PageResources.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/vinci/api/PageResources.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/vinci/api/filters/AnonymousOrAuthorize.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/vinci/api/filters/AnonymousOrAuthorize.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/vinci/api/filters/AuthorizationRequestFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/vinci/api/filters/AuthorizationRequestFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/vinci/domain/Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/vinci/domain/Page.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/vinci/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/vinci/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/vinci/services/PageDataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/vinci/services/PageDataService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,23 +27,21 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="AnnotationType" />
+        <option value="Class" />
+        <option value="HTTP Private Environment File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HttpClientSelectedEnvironments">
+    <file url="file://$PROJECT_DIR$/request/auths.http" environment="dev" />
+    <file url="file://$PROJECT_DIR$/request/pages.http" environment="dev" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="workspaceImportEnabled" value="true" />
-      </MavenImportingSettings>
-    </option>
   </component>
   <component name="ProjectId" id="2LfqyrHEkBa12KJVsRDAW74x1VC" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -67,11 +59,13 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "rest.client.default.execution.environment": "dev",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="be.vinci.services" />
       <recent name="be.vinci.api.filters" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -79,6 +73,43 @@
       <recent name="be.vinci.services" />
       <recent name="be.vinci.services.utils" />
     </key>
+  </component>
+  <component name="RunManager" selected="HTTP Request.pages | Add a page">
+    <configuration name="pages | Add a page" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/request/pages.http" index="4" requestIdentifier="Add a page" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="pages | Add another page" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/request/pages.http" index="5" requestIdentifier="Add another page" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="pages | Delete a page" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/request/pages.http" index="7" requestIdentifier="Delete a page" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="pages | Login the default user" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/request/pages.http" requestIdentifier="Login the default user" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="pages | View all pages" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/request/pages.http" index="2" requestIdentifier="View all pages" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.pages | Add a page" />
+        <item itemvalue="HTTP Request.pages | Delete a page" />
+        <item itemvalue="HTTP Request.pages | View all pages" />
+        <item itemvalue="HTTP Request.pages | Add another page" />
+        <item itemvalue="HTTP Request.pages | Login the default user" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -89,10 +120,26 @@
       <option name="presentableId" value="Default" />
       <updated>1676272743165</updated>
       <workItem from="1676272744321" duration="5106000" />
+      <workItem from="1676282751714" duration="5169000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="error unauthorized" />
+    <option name="LAST_COMMIT_MESSAGE" value="error unauthorized" />
   </component>
 </project>

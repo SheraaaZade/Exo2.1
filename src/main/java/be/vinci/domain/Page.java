@@ -5,12 +5,16 @@ import java.util.Objects;
 
 public class Page {
     private int id;
+    private int authorId;
     private String titre;
     private String URI;
     private String contenu;
     private String auteur;
     private String statut;
     private final String[] statutPublication = {"hidden", "published"};
+
+    public Page() {
+    }
 
     public Page(int id, String titre, String URI, String contenu, String auteur, String statut) {
         this.id = id;
@@ -19,6 +23,10 @@ public class Page {
         this.contenu = contenu;
         this.auteur = auteur;
         this.statut = statut;
+    }
+
+    public int getAuthorId() {
+        return authorId;
     }
 
     public int getId() {
@@ -50,14 +58,19 @@ public class Page {
     }
 
     public void setStatut(String statut) {
-        for (int i = 0; i < statutPublication.length; i++) {
-            if (statut.equals(statutPublication[i]))
-                this.statut = statut;
-        }
+        this.statut = Arrays.stream(statutPublication)
+                .filter(possibleStatus -> possibleStatus.equals(statut))
+                .findFirst()
+                .orElse(null);
+
     }
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public void setAuthorId(int authorId) {
+        this.authorId = authorId;
     }
 
     public void setTitre(String titre) {
@@ -87,10 +100,8 @@ public class Page {
 
     @Override
     public String toString() {
-        return "id=" + id +
-                ", titre='" + titre + '\'' +
-                ", URI='" + URI + '\'' +
-                ", contenu='" + contenu + '\'' +
-                ", auteur='" + auteur;
+        return "Page [id=" + id + ", title=" + titre + ", uri="
+                + URI + ", content=" + contenu + ", publicationStatus="
+                + statut + ", authorId=" + authorId + "]";
     }
 }

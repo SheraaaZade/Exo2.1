@@ -9,33 +9,41 @@ import java.util.List;
 public class PageDataService {
   private static final String COLLECTION_NAME = "pages";
   private static Json<Page> jsonDB = new Json<>(Page.class);
+
+  public List<Page> getAll(){
+    var pages = jsonDB.parse(COLLECTION_NAME);
+    return pages.stream()
+            .filter(item -> item.getStatut().contentEquals("published"))
+            .toList();
+  }
   public List<Page> getAll(User authenticatedUser){
     var pages = jsonDB.parse(COLLECTION_NAME);
-    return pages.stream().filter(item -> item.getStatutPublication().contentEquals("published")
-    || item.getId() == authenticatedUser.getId()).toList();
+    return pages.stream().filter(item -> item.getStatut().contentEquals("published")
+    || item.getAuthorId() == authenticatedUser.getId()).toList();
   }
 
   public Page getOne(int id){
     var pages = jsonDB.parse(COLLECTION_NAME);
     return pages.stream().filter(page -> (page.getId() == id)
-            && (page.getStatutPublication().contentEquals("published")))
+            && (page.getStatut().contentEquals("published")))
             .findAny().orElse(null);
   }
 
   public Page getOne(int id, User authenticatedUser) {
     var pages = jsonDB.parse(COLLECTION_NAME);
     return pages.stream().filter(item -> (item.getId() == id)
-                    && (item.getStatutPublication().contentEquals("published")
-                    || item.getId() == authenticatedUser.getId()))
+                    && (item.getStatut().contentEquals("published")
+                    || item.getAuthorId() == authenticatedUser.getId()))
             .findAny().orElse(null);
   }
 
   public Page createOne (Page page, User authencatedUser){
     var pages = jsonDB.parse(COLLECTION_NAME);
-    page.setId(authencatedUser.getId());
+    page.setId(nextPageId());
     page.setTitre(StringEscapeUtils.escapeHtml4(page.getTitre()));
     page.setContenu(StringEscapeUtils.escapeHtml4(page.getContenu()));
     page.setURI(StringEscapeUtils.escapeHtml4(page.getURI()));
+    page.setAuthorId(authencatedUser.getId());
     pages.add(page);
     jsonDB.serialize(pages, COLLECTION_NAME);
     return page;
@@ -53,7 +61,7 @@ public class PageDataService {
     var pages = jsonDB.parse(COLLECTION_NAME);
     if(pageToDelete == null)
       return null;
-    if(pageToDelete.getId() != authenticatedUser.getId())
+    if(pageToDelete.getAuthorId() != authenticatedUser.getId())
       throw new IllegalArgumentException("Forbidden");
     pages.remove(pageToDelete);
     jsonDB.serialize(pages, COLLECTION_NAME);
@@ -65,7 +73,7 @@ public class PageDataService {
     var pages = jsonDB.parse(COLLECTION_NAME);
     if(pageToUpdate == null)
       return null;
-    if(pageToUpdate.getId() != authenticatedUser.getId())
+    if(pageToUpdate.getAuthorId() != authenticatedUser.getId())
       throw new IllegalArgumentException("Forbidden");
 
     pageToUpdate.setId(id);
@@ -80,8 +88,8 @@ public class PageDataService {
     if (page.getContenu() != null) {
       pageToUpdate.setContenu(StringEscapeUtils.escapeHtml4(page.getContenu()));
     }
-    if (page.getId() != 0) {
-      pageToUpdate.setId(page.getId());
+    if (page.getAuthorId() != 0) {
+      pageToUpdate.setAuthorId(page.getAuthorId());
     }
     if (page.getStatut() != null) {
       pageToUpdate.setStatut(page.getStatut());
