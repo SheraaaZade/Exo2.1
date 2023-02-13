@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae74c094-30b3-4e81-974f-e3318c2b53ae" name="Changes" comment="error unauthorized">
-      <change afterPath="$PROJECT_DIR$/dev.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/request/auths.http" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/request/pages.http" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/be/vinci/api/AuthsResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/be/vinci/api/filters/AnonymousOrAuthorizationRequestFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/be/vinci/services/UserDataService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/vinci/api/PageResources.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/vinci/api/PageResources.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/vinci/api/filters/AnonymousOrAuthorize.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/vinci/api/filters/AnonymousOrAuthorize.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/vinci/api/filters/AuthorizationRequestFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/vinci/api/filters/AuthorizationRequestFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/vinci/domain/Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/vinci/domain/Page.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/vinci/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/vinci/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/vinci/services/PageDataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/vinci/services/PageDataService.java" afterDir="false" />
-    </list>
+    <list default="true" id="ae74c094-30b3-4e81-974f-e3318c2b53ae" name="Changes" comment="done" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -120,8 +106,30 @@
       <option name="presentableId" value="Default" />
       <updated>1676272743165</updated>
       <workItem from="1676272744321" duration="5106000" />
-      <workItem from="1676282751714" duration="5169000" />
+      <workItem from="1676282751714" duration="5502000" />
     </task>
+    <task id="LOCAL-00001" summary="done">
+      <created>1676288217691</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1676288217691</updated>
+    </task>
+    <task id="LOCAL-00002" summary="done">
+      <created>1676288337035</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1676288337035</updated>
+    </task>
+    <task id="LOCAL-00003" summary="done">
+      <created>1676288384211</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1676288384211</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,6 +148,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="error unauthorized" />
-    <option name="LAST_COMMIT_MESSAGE" value="error unauthorized" />
+    <MESSAGE value="done" />
+    <option name="LAST_COMMIT_MESSAGE" value="done" />
   </component>
 </project>
